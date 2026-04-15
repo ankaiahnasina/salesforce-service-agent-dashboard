@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  
+  --color-bg: #f3f5f7;
+  --color-sidebar: #1e293b;
+  --color-accent: #2563eb;
+  --color-border: #e2e8f0;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-critical: #ef4444;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-main font-sans overflow-hidden;
+  }
+}
+
+.app-wrapper {
+  @apply grid grid-cols-[240px_1fr_320px] grid-rows-[60px_1fr_40px] h-screen w-full max-w-[1440px] mx-auto shadow-2xl;
+}
+
+.sidebar {
+  @apply bg-sidebar text-white p-5 flex flex-col gap-5 overflow-y-auto;
+}
+
+.main-view {
+  @apply bg-white p-5 border-r border-border overflow-y-auto;
+}
+
+.right-panel {
+  @apply bg-[#fafafa] p-5 flex flex-col gap-4 overflow-y-auto;
+}
+
+.card {
+  @apply border border-border rounded-lg p-4 mb-4 bg-white;
+}
+
+.card-title {
+  @apply text-[11px] uppercase tracking-wider text-text-muted font-bold mb-3 flex justify-between items-center;
+}
+
+.data-grid {
+  @apply grid grid-cols-2 gap-3 text-sm;
+}
+
+.label {
+  @apply text-text-muted text-[10px] uppercase font-semibold;
+}
+
+.value {
+  @apply font-medium text-text-main;
+}
+
+.code-box {
+  @apply bg-[#1e1e1e] text-[#d4d4d4] font-mono text-[11px] p-3 rounded-md border border-[#333] leading-relaxed overflow-x-auto;
+}
+
+.rag-result {
+  @apply bg-[#fffbeb] border border-[#fde68a] p-3 rounded-md text-sm;
+}
+
+.status-pill {
+  @apply bg-[#ecfdf5] text-success px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5;
+}
+
+.status-dot {
+  @apply w-1.5 h-1.5 rounded-full bg-current;
+}
+
+.step {
+  @apply flex gap-3 items-start opacity-60 transition-opacity;
+}
+
+.step-active {
+  @apply opacity-100 font-semibold;
+}
+
+.step-num {
+  @apply w-5 h-5 rounded-full border border-white/30 flex items-center justify-center text-[10px] shrink-0;
+}
+
+.step-active .step-num {
+  @apply bg-accent border-accent;
+}
+
+.critical-badge {
+  @apply bg-critical text-white px-1.5 py-0.5 rounded text-[10px] font-extrabold;
+}
+
+.data-row {
+  @apply grid grid-cols-[40px_1.5fr_1fr_1fr] p-3 border-b border-border transition-colors cursor-pointer hover:bg-gray-50;
+}
+
+.col-header {
+  @apply text-[10px] text-text-muted uppercase font-bold tracking-wider;
+}
+
+.data-value {
+  @apply font-mono text-[11px] tracking-tight;
+}
