@@ -1,0 +1,6 @@
+{
+  "name": "Salesforce Service Agent Dashboard",
+  "description": "A closed-loop automotive service agent that automates Salesforce case handling using RAG-based technical analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["Salesforce Integration", "RAG Analysis", "Automated Workflows"]
+}
